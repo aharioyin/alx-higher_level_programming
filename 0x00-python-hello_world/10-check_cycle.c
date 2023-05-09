@@ -9,22 +9,22 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *, *;
+	listint_t *unoptimized, *check;
 
 	if (!list)
 	{
 		return (0);
 	}
 	unoptimized = list;
-	optimized = list->next;
-	while (optimized && unoptimized && optimized->next)
+	check = list->next;
+	while (check && unoptimized && check->next)
 	{
-		if (unoptimized == optimized)
+		if (unoptimized == check)
 		{
 			return (1);
 		}
 		unoptimized = unoptimized->next;
-		optimized = optimized->next->next;
+		check = check->next->next;
 	}
 	return (0);
 }
